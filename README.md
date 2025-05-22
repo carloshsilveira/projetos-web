@@ -5,4 +5,4 @@ Repositório para projetos web
 
 ![Print do jogo](jogo-numero-secreto/img/tela.png)
 
-Clique aqui para jogar: [Jogar agora](https://carloshsilveira.github.io/projetos-web/jogo-numero-secreto/index.html)
+[Clique aqui para jogar](https://carloshsilveira.github.io/projetos-web/jogo-numero-secreto/index.html)
