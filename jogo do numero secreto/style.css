@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 10% 10%;
+    position: relative;
+}
+
+.container__conteudo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.container__informacoes {
+    flex: 1;
+    padding: 1rem;
+}
+
+.container__botao {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+}
+
+.container__texto {
+    margin: 8px 0;
+}
+
+.container__texto-azul {
+    color: #1875E8;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 2em;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    padding: 5px;
+    font-size: 60px;
+}
+
+p, button {
+    font-family: 'Inter', sans-serif;
+}
+
+button:active {
+    background-color: rgb(23, 165, 49);
+}
+
+.texto__paragrafo {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+.container__imagem-pessoa {
+    width: 30vw;
+}
+
+p#numeroDeTentativas {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+p#melhorTurma {
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 500px) {
+
+    .container {
+        height: 80%;
+        margin-bottom: 80px;
+    }
+
+    .container__botoes {
+        gap: 1em;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        line-height: 1em;
+    }
+
+    .container__input {
+        width: 90%;
+        height: 10vh;
+        text-align: center;
+    }
+
+    .container__botao {
+        font-size: 16px;
+        margin-top: 15px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .container__botoes {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .texto__paragrafo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .container__imagem-pessoa {
+        display: none;
+        width: 5vw;
+    }
+
+    .container__conteudo {
+        display: block;
+        position: inherit;
+        line-height: 30px;
+    }
+
+    .container__informacoes {
+        padding: 1rem
+    }
+
+    p#numeroDeTentativas {
+        padding: 10px;
+        font-size: 1.5em;
+        text-align: center;
+    }  
+}
