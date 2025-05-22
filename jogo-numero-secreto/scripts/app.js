@@ -125,4 +125,3 @@ function reiniciarJogo() {
   document.querySelector('.container__input').disabled = false;
   stopFireworks();
 }
-
