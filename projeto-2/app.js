@@ -30,7 +30,6 @@ function gerarNumeroAleatorio() {
         let numeroEscolhido = parseInt(Math.random() * numMaximo + 1);
         numeros.push(numeroEscolhido)
     }
-    console.log(numeros)
 }
 
 function bloquearInput() {
@@ -49,8 +48,6 @@ function bloquearInput() {
 }
 
 function verificarChute() {
-    console.log(numAgora)
-    console.log(senhaAtual)
     let input = `input${numAgora+1}`;
     let chute = document.getElementById(input).value;
     if (chute <= numMaximo && chute != '') {

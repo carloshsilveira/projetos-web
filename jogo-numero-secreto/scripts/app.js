@@ -111,7 +111,7 @@ function exibirTentativas() {
   let textoTentivas = document.getElementById('numeroDeTentativas');
   textoTentivas.innerHTML = `Tentativas: ${tentativas}`;
   let textoMelhorTurma = document.getElementById('melhorTurma');
-  textoMelhorTurma.innerHTML = `Record: Manhã ou Tarde?`;
+  textoMelhorTurma.innerHTML = `Record: Tarde --> Paulo Henrique`;
 }
 
 function reiniciarJogo() {
