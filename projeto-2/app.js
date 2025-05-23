@@ -69,14 +69,19 @@ function verificarChute() {
             numAgora++;
             desbloqueado++;
             if (numAgora < numeros.length) {
-                senhaAtual = numeros[numAgora]; // Atualiza a senha!
+                senhaAtual = numeros[numAgora];
                 bloquearInput();
+
+                // Muda o foco para o próximo input desbloqueado
+                let proximoInput = document.getElementById(`input${numAgora + 1}`);
+                if (proximoInput) {
+                    proximoInput.focus();
+                }
 
             } else {
                 exibirTextoNaTela('texto__pergunta', 'Senha completamente descoberta!!!');
                 document.getElementById('iniciar').disabled = true;
                 document.getElementById('reiniciar').disabled = false;
-                // Aqui pode encerrar o jogo e mostrar mensagem de vitória.
             }
 
         } else {
@@ -128,6 +133,8 @@ function reiniciarJogo() {
 
     // Ativa o botão Chutar
     document.getElementById('iniciar').disabled = false;
+
+    exibirTextoNaTela('texto__pergunta', 'Descubra o segredo do cadeado');
 }
 
 function exibirTentativas() {
