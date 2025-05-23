@@ -7,6 +7,6 @@ Repositório para projetos web
 
 [Clique aqui para jogar](https://carloshsilveira.github.io/projetos-web/jogo-numero-secreto/index.html)
 
-## 🎮 Jogo da Chave
+## 🎮 Jogo da Chave Secreta
 
 [Clique aqui para jogar](https://carloshsilveira.github.io/projetos-web/projeto-2/index.html)
