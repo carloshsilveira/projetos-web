@@ -1,10 +1,38 @@
-let titulo = document.getElementById('texto__tiulo');
-titulo.innerHTML = 'Jogo da Chave Secreta';
+// ========== FIREWORKS ==========
+let fireworksInstance = null;
 
-let pergunta = document.getElementById('texto__pergunta');
-pergunta.innerHTML = 'Descubra o segredo do cadeado';
+function initFireworks() {
+  const container = document.getElementById('fireworks-container');
+  fireworksInstance = new Fireworks.Fireworks(container, {
+    hue: { min: 0, max: 360 },
+    acceleration: 1.03,
+    brightness: { min: 50, max: 80 },
+    decay: { min: 0.015, max: 0.03 },
+    mouse: { click: true, move: false, max: 1 },
+    intensity: 50
+  });
+}
 
-let numMaximo = 9;
+function startFireworks() {
+  if (fireworksInstance) {
+    fireworksInstance.start();
+  } else {
+    console.warn('Fireworks não inicializado. Chame initFireworks() primeiro.');
+  }
+}
+
+function stopFireworks() {
+  if (fireworksInstance) {
+    fireworksInstance.stop();
+  }
+}
+
+// Jogo 
+
+initFireworks();
+
+let numMaximo = 20;
+
 let numeros = [];
 let numAgora = 0;
 gerarNumeroAleatorio();
@@ -12,6 +40,11 @@ let desbloqueado = 1;
 let tentativas = 0;
 let senhaAtual = numeros[numAgora];
 bloquearInput()
+
+
+exibirTextoNaTela('texto__tiulo', 'Jogo da Chave Secreta');
+
+exibirTextoNaTela('texto__pergunta', `Descubra o segredo do cadeado. Digite um número entre 1 e ${numMaximo}.`);
 
 // Seleciona todos os inputs dentro do container__blocos
 const inputs = document.querySelectorAll('.container__blocos input');
@@ -58,13 +91,9 @@ function verificarChute() {
             document.getElementById(input).disabled = true;
             document.getElementById(input).classList.add('acerto');
 
-            //startFireworks();
-
-            //setTimeout(() => {
-            //stopFireworks();
-            //}, 20000);
             numAgora++;
             desbloqueado++;
+
             if (numAgora < numeros.length) {
                 senhaAtual = numeros[numAgora];
                 bloquearInput();
@@ -76,6 +105,11 @@ function verificarChute() {
                 }
 
             } else {
+                startFireworks();
+
+                setTimeout(() => {
+                    stopFireworks();
+                }, 20000);
                 exibirTextoNaTela('texto__pergunta', 'Senha completamente descoberta!!!');
                 document.getElementById('iniciar').disabled = true;
                 document.getElementById('reiniciar').disabled = false;
@@ -87,7 +121,7 @@ function verificarChute() {
         }
 
     } else {
-        exibirTextoNaTela('texto__pergunta', 'Digite um número entre 0 e 9!');
+        exibirTextoNaTela('texto__pergunta', `Digite um número entre 0 e ${numMaximo}.`);
         limparCampo(input);
     }
 }
@@ -103,6 +137,8 @@ function limparCampo(input) {
 }
 
 function reiniciarJogo() {
+    stopFireworks();
+
     // Zera variáveis
     numeros = [];
     numAgora = 0;
@@ -131,7 +167,7 @@ function reiniciarJogo() {
     // Ativa o botão Chutar
     document.getElementById('iniciar').disabled = false;
 
-    exibirTextoNaTela('texto__pergunta', 'Descubra o segredo do cadeado');
+    exibirTextoNaTela('texto__pergunta', `Descubra o segredo do cadeado. Digite um número entre 1 e ${numMaximo}.`);
 }
 
 function exibirTentativas() {

@@ -80,7 +80,7 @@ p {
     border-radius: 16px;
     background: #1875E8;
     width: 60vw;
-    height: 6vh;
+    height: 8vh;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -95,4 +95,22 @@ button:disabled {
     border: 2px solid #008000; /* Verde escuro */
     color: #000;
     font-weight: bold;
+}
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .container__botao {
+        height: 6vh;
+    }
 }
