@@ -41,6 +41,7 @@ p, button {
 
 p {
     padding: 10px;
+    font-size: 17px;
 }
 
 .container__pergunta {
@@ -71,13 +72,13 @@ p {
 .container__botoes {
     display: flex;
     flex-flow: column nowrap;
-    gap: 10px;
+    margin-top: 10px;
+    gap: 20px;
 }
 
 .container__botao {
     border-radius: 16px;
     background: #1875E8;
-    padding: 0.8em;
     width: 60vw;
     height: 6vh;
     font-size: 16px;
