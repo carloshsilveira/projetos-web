@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da chave</title>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="container__titulo">
+            <h1 id="texto__tiulo"> Titulo</h1>
+        </div>
+
+        <div class="container__pergunta">
+            <p id="texto__pergunta">Pergunta</p>
+        </div>
+
+        <div class="container__blocos">
+            <input type="number" min="1" max="10" id="input1" disabled/>
+            <input type="number" min="1" max="10" id="input2" disabled/>
+            <input type="number" min="1" max="10" id="input3" disabled/>
+            <input type="number" min="1" max="10" id="input4" disabled/>
+        </div>
+        
+        <div class="container__botoes">
+            <button onclick="verificarChute()" id="iniciar" class="container__botao">Chutar</button>
+            <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
+        </div>
+
+        <div class="container__tentativas">
+            <p id="numeroDeTentativas"></p>
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
