@@ -13,6 +13,18 @@ let tentativas = 0;
 let senhaAtual = numeros[numAgora];
 bloquearInput()
 
+// Seleciona todos os inputs dentro do container__blocos
+const inputs = document.querySelectorAll('.container__blocos input');
+
+inputs.forEach(input => {
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      verificarChute();
+    }
+  });
+});
+
+
 function gerarNumeroAleatorio() {
     for (let i=0; i<4; i++) {
         let numeroEscolhido = parseInt(Math.random() * numMaximo + 1);
