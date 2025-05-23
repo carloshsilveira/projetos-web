@@ -112,6 +112,10 @@ p, button {
     font-family: 'Inter', sans-serif;
 }
 
+p#melhorTurma {
+    font-size: 5px;
+}
+
 button:active {
     background-color: rgb(23, 165, 49);
 }
@@ -135,9 +139,6 @@ p#numeroDeTentativas {
     font-size: 1.5em;
 }
 
-p#melhorTurma {
-    font-size: 1.5em;
-}
 
 @media screen and (max-width: 500px) {
 
@@ -196,8 +197,12 @@ p#melhorTurma {
     }
 
     p#numeroDeTentativas {
-        padding: 10px;
+        padding: 5px;
         font-size: 1.5em;
         text-align: center;
-    }  
+    } 
+
+    p#melhorTurma {
+    font-size: 20px;
+}
 }
