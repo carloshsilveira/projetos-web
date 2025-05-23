@@ -139,6 +139,9 @@ p#numeroDeTentativas {
     font-size: 1.5em;
 }
 
+p#melhorTurma {
+    font-size: 20px;
+}
 
 @media screen and (max-width: 500px) {
 
@@ -204,5 +207,5 @@ p#numeroDeTentativas {
 
     p#melhorTurma {
     font-size: 20px;
-}
+    }
 }
