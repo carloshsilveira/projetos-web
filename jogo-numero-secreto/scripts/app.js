@@ -109,9 +109,9 @@ function limparCampo() {
 
 function exibirTentativas() {
   let textoTentivas = document.getElementById('numeroDeTentativas');
-  textoTentivas.innerHTML = `Tentativas: ${tentativas}`;
+  textoTentivas.innerHTML = tentativas > 1 ? `Tentativas: ${tentativas}` : `Tentativa: ${tentativas}`;
   let textoMelhorTurma = document.getElementById('melhorTurma');
-  textoMelhorTurma.innerHTML = 'Record: Tarde<br>Aluno: Paulo Henrique';
+  textoMelhorTurma.innerHTML = 'Record: Tarde<br>Alunos: Paulo Henrique <br>Nairon Gustavo';
 }
 
 function reiniciarJogo() {
